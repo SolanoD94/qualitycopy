@@ -19,6 +19,8 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
+import { CalendarDaysIcon, CreditCardIcon, UserCircleIcon } from '@heroicons/react/20/solid'
+
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -345,14 +347,19 @@ function FeaturesDesktop() {
                 initial={{ borderRadius: 16 }}
               />
             )}
-            <div className="relative z-10 p-8">
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 text-lg font-semibold text-white">
+            <div className="relative z-10 p-8 flex  items-center">
+              <feature.icon className="h-6 w-8" />
+              <h3 className="mt-0 ml-4 text-lg font-semibold text-white">
                 <Tab className="text-left [&:not(:focus-visible)]:focus:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
                 </Tab>
               </h3>
+              <span className="ml-6 inline-flex flex-shrink-0 items-center rounded-lg bg-cyan-500 px-4 py-0.5 text-sm font-medium text-white">
+                  {feature.price}
+                </span>
+            </div>
+            <div className="flex flez-row relative z-10 p-8">
               <p className="mt-2 text-sm text-gray-400">
                 {feature.description}
               </p>
