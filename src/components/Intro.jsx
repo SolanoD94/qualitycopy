@@ -107,9 +107,7 @@ export function Hero() {
             Renta un Equipo con <br></br> 50% Descuento
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              By leveraging insights from our network of industry insiders,
-              you’ll know exactly when to buy to maximize profit, and exactly
-              when to sell to avoid painful losses.
+            Quality Copy te brinda la mejor experiencia al ofrecerte equipos multifuncionales de alta calidad, soporte técnico especializado y planes de renta flexibles a tus necesidades. Con nosotros, podrás maximizar tu productividad y eficiencia sin preocuparte por los costos y el mantenimiento asociados a la propiedad de los equipos. 
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
             <Button href="#planesRenta" className="hidden lg:block">
@@ -142,17 +140,17 @@ export function Hero() {
             </p>
             <ul
               role="list"
-              className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-16 gap-y-12 lg:mx-0 lg:justify-start"
+              className="mx-auto mt-8 flex max-w-xl flex-wrap justify-start gap-x-6 gap-y-12 lg:mx-0 lg:justify-start"
             >
               {[
-                ['Pantum', logoPantum],
                 ['Epson', logoEpson],
                 ['Xerox', logoXerox],
-                ['Brother', logoBrother],
-                ['Ricoh', logoRicoh]
+                ['Pantum', logoPantum],
+                // ['Brother', logoBrother],
+                // ['Ricoh', logoRicoh]
               ].map(([name, logo, className]) => (
                 <li key={name} className={clsx('flex', className)}>
-                  <Image src={logo} alt={name} className="h-8" unoptimized />
+                  <Image src={logo} alt={name} className="h-10" unoptimized />
                 </li>
               ))}
             </ul>

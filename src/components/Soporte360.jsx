@@ -1,6 +1,6 @@
-import { AppStoreLink } from '@/components/AppStoreLink'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
+import { Button } from '@/components/Button'
 
 export function CallToAction() {
   return (
@@ -14,7 +14,7 @@ export function CallToAction() {
       <Container className="relative">
         <div className="mx-auto max-w-md sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-white sm:text-4xl">
-            Get your first tips today
+            Soporte 360º
           </h2>
           <p className="mt-4 text-lg text-gray-300">
             It takes 30 seconds to sign up. Download the app and create an
@@ -22,7 +22,15 @@ export function CallToAction() {
             first investment.
           </p>
           <div className="mt-8 flex justify-center">
-            <AppStoreLink color="white" />
+          <Button
+                href="https://api.whatsapp.com/send?phone=5212223929010"
+                variant="solid"
+                color="white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="mx-6">Agendar una llamada</span>
+              </Button>
           </div>
         </div>
       </Container>

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import clsx from 'clsx'
+import { ExclamationTriangleIcon } from '@heroicons/react/20/solid'
+
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -158,6 +160,7 @@ function Plan({
             </span>
           </>
         )}
+        <span className='text-sm pl-2'> / mes</span>
       </p>
       <p
         className={clsx(
@@ -202,6 +205,19 @@ function Plan({
   )
 }
 
+function SolicitarCotización(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+        fill="none"
+        stroke="white"
+      />
+    </svg>
+    
+  )
+}
+
 export function Pricing() {
   let [activePeriod, setActivePeriod] = useState('Monthly')
 
@@ -217,15 +233,12 @@ export function Pricing() {
             id="pricing-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
           >
-            Elige tu plan de Renta
+          Simplifica tu trabajo y ahorra con nuestros planes de renta mensuales.
           </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            Whether you’re one person trying to get ahead or a big firm trying
-            to take over the world, we’ve got a plan for you.
-          </p>
         </div>
 
         <div className="mt-8 flex justify-center">
+          
           <div className="relative">
             <RadioGroup
               value={activePeriod}
@@ -276,17 +289,38 @@ export function Pricing() {
             <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
           ))}
         </div>
-        <div className="mx-auto max-w-2xl text-center mt-6">
-          <p className="mt-22 text-md text-gray-600">
-        Requisitos necesarios al contratar cualquier plan de renta:
-          </p>
-            <div className="">
-            <CheckIcon className={clsx('h-6 w-6 flex-none text-gray-700 ')}> <span className="ml-4 text-gray-700">Documentación legal y fiscal.</span></CheckIcon>
-            <CheckIcon className={clsx('h-6 w-6 flex-none text-black ')}></CheckIcon> <span className="ml-4">Documentación legal y fiscal.</span>
-            <CheckIcon className={clsx('h-6 w-6 flex-none text-black ')}></CheckIcon> <span className="ml-4">Documentación legal y fiscal.</span>
-
+       {/* Requisitos */}
+        <div className="mx-auto mt-16 max-w-2xl lg:max-w-none rounded-md bg-yellow-50 p-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <ExclamationTriangleIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
+            </div>
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-yellow-800">Requisitos para contratar un plan de renta.</h3>
+              <div className="mt-2 text-sm text-yellow-700">
+                <ul role="list" className="list-disc space-y-1 pl-5">              
+                <li>Documentos legales y fiscales.</li>
+                <li>Pago de un mes de renta como depósito.</li>
+                <li>Firma de contrato por 12 meses forzoso.</li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+          {/* Boton */}
+          <div className="mt-8 flex justify-center">
+        <Button
+                href="https://api.whatsapp.com/send?phone=5212223929010"
+                target="_blank"
+                variant="solid"
+                rel="noreferrer"
+                color="cyan"
+                className="mx-auto mt-16 max-w-2xl"
+              >
+                <SolicitarCotización className="h-6 w-6 flex-none" />
+                <span className="mx-3 text-md">Solicitar cotización formal</span>
+            </Button>
+            </div>
       </Container>
     </section>
   )
