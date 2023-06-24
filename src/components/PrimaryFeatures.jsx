@@ -4,7 +4,7 @@ import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDebouncedCallback } from 'use-debounce'
-import Workforce from "@/images/workforce-bg.png"
+import Workforce from '@/images/workforce-bg.png'
 import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
@@ -19,8 +19,11 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
-import { CalendarDaysIcon, CreditCardIcon, UserCircleIcon } from '@heroicons/react/20/solid'
-
+import {
+  CalendarDaysIcon,
+  CreditCardIcon,
+  UserCircleIcon,
+} from '@heroicons/react/20/solid'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -28,48 +31,81 @@ const MotionAppScreenBody = motion(AppScreen.Body)
 const features = [
   {
     name: 'Pantum Multifuncional',
-    price:"$3,921 pesos MXN",
-    description:"TAMAÑO CARTA Y OFICIO",
+    price: '$3,921 pesos MXN',
+    type: 'Multifuncional Láser B&N',
+    function: 'Copia, Imprime, Escanea',
+    size: 'Carta, Oficio, Legal, Ejecutivo, A4, A5, A6',
+    speed: '23 ppm impresión en Negro',
+    firstPage: 'menos de 12 segundos',
+    resolution: '1200 x 1200',
+    consumible: 'Toner Recargable - rendimiento hasta 1600 páginas',
     icon: Printer,
     screen: InviteScreen,
   },
   {
     name: 'Pantum Impresora',
-    price:"$2,564 pesos MXN",
-    description:"TAMAÑO CARTA Y OFICIO",
+    price: '$2,564 pesos MXN',
+    type: 'Impresora Láser B&N',
+    function: 'Imprime',
+    size: 'Carta, Oficio, Legal, Ejecutivo, A4, A5, A6',
+    speed: '23 ppm impresión en Negro',
+    firstPage: 'menos de 12 segundos',
+    resolution: '1200 x 1200',
+    consumible: 'Toner Recargable - rendimiento hasta 1600 páginas',
     icon: Printer,
     screen: StocksScreen,
   },
-  {
-    name: 'Plotter Epson T3170',
-    price:"desde $16,096 pesos MXN",
-    description:"Acepta Rollo de papel de 60cm (24 Pulg)",    
-    icon: Document,
-    screen: InvestScreen,
-  },
+  // {
+  //   name: 'Plotter Epson T3170',
+  //   price: 'desde $16,096 pesos MXN',
+  //   type: 'Plotter a Color',
+  //   function: 'Imprime',
+  //   size: 'hasta 60cm de ancho (24 pulgadas)',
+  //   speed: '34 segundos',
+  //   firstPage: 'menos de 12 segundos',
+  //   resolution: '1200 x 1200',
+  //   consumible: 'Toner Recargable - rendimiento hasta 1600 páginas',
+  //   icon: Document,
+  //   screen: InvestScreen,
+  // },
 ]
 
 function Printer(props) {
   return (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="#A3A3A3" aria-hidden="true" {...props}>
-    <path
-      clip-rule="evenodd"
-      fill-rule="evenodd"
-      d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z" />
-  </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 22 22"
+      fill="#A3A3A3"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        clip-rule="evenodd"
+        fill-rule="evenodd"
+        d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z"
+      />
+    </svg>
   )
 }
 
 function Document(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="#A3A3A3" aria-hidden="true" {...props}>
-    <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zM9.75 17.25a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-.75zm2.25-3a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zm3.75-1.5a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-5.25z" clip-rule="evenodd" />
-    <path d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z" />
-  </svg>
-  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 22 22"
+      fill="#A3A3A3"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zM9.75 17.25a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-.75zm2.25-3a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zm3.75-1.5a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-5.25z"
+        clip-rule="evenodd"
+      />
+      <path d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z" />
+    </svg>
   )
 }
-
 
 const headerAnimation = {
   initial: { opacity: 0, transition: { duration: 0.3 } },
@@ -347,22 +383,73 @@ function FeaturesDesktop() {
                 initial={{ borderRadius: 16 }}
               />
             )}
-            <div className="relative z-10 p-8 flex  items-center">
+            <div className="relative z-10 flex items-center px-8 pt-8">
               <feature.icon className="h-6 w-8" />
-              <h3 className="mt-0 ml-4 text-lg font-semibold text-white">
+              <h3 className="ml-4 text-lg font-semibold text-white">
                 <Tab className="text-left [&:not(:focus-visible)]:focus:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
                 </Tab>
               </h3>
-              <span className="ml-6 inline-flex flex-shrink-0 items-center rounded-lg bg-cyan-500 px-4 py-0.5 text-sm font-medium text-white">
-                  {feature.price}
-                </span>
+              <span className="text-md ml-6 inline-flex flex-shrink-0 items-center rounded-lg bg-cyan-500 px-4 py-0.5 font-bold text-white">
+                {feature.price}
+              </span>
             </div>
-            <div className="flex flez-row relative z-10 p-8">
-              <p className="mt-2 text-sm text-gray-400">
-                {feature.description}
-              </p>
+            <div className="relative z-10 flex px-8 pb-6 pt-2">
+              <div>
+                <div className="mt-3 border-t border-white/10">
+                  <dl className="divide-y divide-white/10">
+                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt className="text-sm font-medium leading-5 text-white">
+                        {feature.type}
+                      </dt>
+                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                        {feature.function}
+                      </dd>
+                    </div>
+                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt className="text-sm font-medium leading-5 text-white">
+                        Tamaño de papel
+                      </dt>
+                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                        {feature.size}
+                      </dd>
+                    </div>
+                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt className="text-sm font-medium leading-5 text-white">
+                        Velocidad
+                      </dt>
+                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                        {feature.speed}
+                      </dd>
+                    </div>
+                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt className="text-sm font-medium leading-5 text-white">
+                        Primera hoja impresa
+                      </dt>
+                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                        {feature.firstPage}
+                      </dd>
+                    </div>
+                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt className="text-sm font-medium leading-5 text-white">
+                        Resolución
+                      </dt>
+                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                        {feature.resolution}
+                      </dd>
+                    </div>
+                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt className="text-sm font-medium leading-5 text-white">
+                        Consumible
+                      </dt>
+                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                        {feature.consumible}
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -451,9 +538,11 @@ function FeaturesMobile() {
                 />
               </div>
               {/* <PhoneFrame className="relative mx-auto w-full max-w-[366px]"> */}
-              <Image className="mx-auto max-w-[2000px] mt-8" priority
-              src={Workforce}>
-              </Image>
+              <Image
+                className="mx-auto mt-8 max-w-[2000px]"
+                priority
+                src={Workforce}
+              ></Image>
               {/* </PhoneFrame> */}
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
@@ -506,7 +595,8 @@ export function PrimaryFeatures() {
             Nuestra Línea Económica de Impresión
           </h2>
           <p className="mt-2 text-lg text-gray-400">
-            Pantum, la marca de impresoras y multifuncionales de mejor calidad, al precio más bajo del mercado.
+            Pantum, la marca de impresoras y multifuncionales de mejor calidad,
+            al precio más bajo del mercado.
           </p>
         </div>
       </Container>
