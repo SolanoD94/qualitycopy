@@ -586,18 +586,28 @@ export function PrimaryFeatures() {
   return (
     <section
       id="features"
-      aria-label="Features for investing all your money"
+      aria-label="Linea economica pantum"
       className="bg-gray-900 py-20 sm:py-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            Nuestra Línea Económica de Impresión
-          </h2>
-          <p className="mt-2 text-lg text-gray-400">
-            Pantum, la marca de impresoras y multifuncionales de mejor calidad,
-            al precio más bajo del mercado.
-          </p>
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+          <div className="mt-6 lg:col-span-7 lg:mt-0">
+            <h2 className="text-3xl font-medium tracking-tight text-white">
+              Nuestra Línea Económica de Impresión
+            </h2>
+            <p className="mt-2 text-lg text-gray-400">
+              Pantum, la marca de impresoras y multifuncionales de mejor
+              calidad, al precio más bajo del mercado.
+            </p>
+          </div>
+          <div className=" lg:col-span-4 lg:col-start-9">
+            <iframe
+              src="https://video.wixstatic.com/video/52a653_414bd22a7b284501868be7f37bddd442/720p/mp4/file.mp4"
+              className="rounded object-cover"
+              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </Container>
       <div className="mt-16 md:hidden">
