@@ -86,7 +86,7 @@ export function SecondaryFeatures() {
                 src={feature.video}
                 title={feature.name}
                 frameborder="0"
-                allow="fullscreen; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="fullscreen; accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               ></iframe>
               <div className="relative z-10 flex items-center pt-8">
