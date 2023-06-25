@@ -384,14 +384,13 @@ function FeaturesDesktop() {
               />
             )}
             <div className="relative z-10 flex items-center px-8 pt-8">
-              <feature.icon className="h-6 w-8" />
               <h3 className="ml-4 text-lg font-semibold text-white">
                 <Tab className="text-left [&:not(:focus-visible)]:focus:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
                 </Tab>
               </h3>
-              <span className="text-md ml-6 inline-flex flex-shrink-0 items-center rounded-lg bg-cyan-500 px-4 py-0.5 font-bold text-white">
+              <span className="text-md ml-auto inline-flex flex-shrink-0 items-center rounded-lg bg-cyan-500 px-4 py-0.5 font-bold text-white">
                 {feature.price}
               </span>
             </div>
