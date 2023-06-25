@@ -603,7 +603,10 @@ export function PrimaryFeatures() {
             <iframe
               src="https://video.wixstatic.com/video/52a653_414bd22a7b284501868be7f37bddd442/720p/mp4/file.mp4"
               className="rounded object-cover"
-              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted"
+              allowfullscreen
+              autoplay
+              muted
             ></iframe>
           </div>
         </div>

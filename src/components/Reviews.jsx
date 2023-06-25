@@ -107,7 +107,7 @@ function StarRating({ rating }) {
 
 function Review({ title, body, author, rating, className, ...props }) {
   let animationDelay = useMemo(() => {
-    let possibleAnimationDelays = ['0.4s', '0.5s']
+    let possibleAnimationDelays = ['0s', '0.1s', '0.2s']
     return possibleAnimationDelays[
       Math.floor(Math.random() * possibleAnimationDelays.length)
     ]

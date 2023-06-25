@@ -54,7 +54,7 @@ const features = [
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
+      id="empresas"
       aria-label="Features for building a portfolio"
       className="py-20 sm:py-32"
     >
@@ -88,6 +88,8 @@ export function SecondaryFeatures() {
                 frameborder="0"
                 allow="fullscreen; accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
+                autoplay
+                muted
               ></iframe>
               <div className="relative z-10 flex items-center pt-8">
                 <h3 className="mt-0 font-semibold text-gray-900">

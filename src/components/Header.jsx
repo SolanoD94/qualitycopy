@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
+import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 
 function MenuIcon(props) {
@@ -51,8 +51,9 @@ export function Header() {
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+            <Link href="/" aria-label="Home" className="flex items-center">
+              <Logomark className="h-10 w-auto" />
+              <span className="ml-2 font-semibold text-2xl">Quality Copy</span>
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
@@ -99,13 +100,13 @@ export function Header() {
                         >
                           <div className="space-y-4">
                             <MobileNavLink href="#features">
-                              Features
-                            </MobileNavLink>
-                            <MobileNavLink href="#reviews">
-                              Reviews
+                              Pantum
                             </MobileNavLink>
                             <MobileNavLink href="#pricing">
-                              Pricing
+                              Renta un Equipo
+                            </MobileNavLink>
+                            <MobileNavLink href="#empresas">
+                              Empresas
                             </MobileNavLink>
                             <MobileNavLink href="#faqs">FAQs</MobileNavLink>
                           </div>
