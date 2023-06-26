@@ -10,22 +10,43 @@ import { Logomark } from '@/components/Logo'
 
 const plans = [
   {
-    name: 'Promoción: 50% de Descuento',
+    name: 'Mini Impresora Laser B&N',
     featured: false,
-    price: { Monthly: '$950 MXN', Annually: '$0' },
+    price: { Monthly: '$567 MXN', Annually: '$0' },
     description:
-      'Aplica para equipos usados y sujeto a disponibilidad.',
+      'Renta Mini Impresora para Oficina Máximo 4 Usuarios Wifi.',
     button: {
       label: 'Contratar',
       href: '/register',
     },
     features: [
-      'Incluye 5,000 impresiones/copias B&N tamaño carta',
-      '5,000 escaneos',
-      'Consumibles durante todo el contrato de renta',
+      'Incluye 1,000 impresiones/copias B&N',
+      "Tamaño Carta y Oficio",
+      'Consumibles durante todo el contrato de renta. No incluye papel.',
       'Servicio Técnico',
       "Incluye tinta o toner y refacciones",
-      "Multifuncional SEMI-NUEVO copia, imprime y escanea",
+      "Impresora Laser NUEVA: Imprime en B&N",
+    ],
+    logomarkClassName: 'fill-gray-300',
+  },
+  {
+    name: 'Mini Multifuncional',
+    featured: false,
+    price: { Monthly: '$584 MXN', Annually: '$0' },
+    description:
+      'Renta Mini Multifuncional para Oficina Máximo 4 Usuarios Wifi.',
+    button: {
+      label: 'Contratar',
+      href: '/register',
+    },
+    features: [
+      'Incluye 1,000 impresiones/copias B&N y Color',
+      "Tamaño Carta y Oficio",
+      "Incluye 1,000 escaneos",
+      'Consumibles durante todo el contrato de renta. No incluye papel.',
+      'Servicio Técnico',
+      "Incluye tinta o toner y refacciones",
+      "Multifuncional NUEVA: Imprime, Copia, y Escanea",
     ],
     logomarkClassName: 'fill-gray-300',
   },
@@ -40,13 +61,14 @@ const plans = [
       href: '/register',
     },
     features: [
-      'Incluye 5,000 impresiones/copias B&N tamaño carta',
-      '500 impresiones/ copias a COLOR tamaño carta y 5,000 escaneos',
-      'Consumibles durante todo el contrato de renta',
-      'Servicio Técnico',
-      "Instalación y configuración",
-      "Incluye tinta o toner y refacciones",
-      "Multifuncional NUEVO copia, imprime y escanea",
+      'Incluye 5,000 impresiones/copias B&N.',
+      "Tamaño Carta.",
+      '500 impresiones/copias a COLOR y 5,000 escaneos.',
+      'Consumibles durante todo el contrato de renta. No incluye papel.',
+      'Servicio Técnico.',
+      "Instalación y configuración.",
+      "Incluye tinta o toner y refacciones.",
+      "Multifuncional NUEVO: Copia, Imprime y Escanea.",
     ],
     adicionales: [
       'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
@@ -65,9 +87,10 @@ const plans = [
       href: '/register',
     },
     features: [
-      'Incluye 5,000 impresiones/copias B&N tamaño carta',
-      '1,000 impresiones/ copias a COLOR tamaño carta y 5,000 escaneos',
-      'Consumibles durante todo el contrato de renta',
+      'Incluye 5,000 impresiones/copias B&N',
+      "Tamaño Carta",
+      '1,000 impresiones/copias a COLOR y 5,000 escaneos',
+      'Consumibles durante todo el contrato de renta. No incluye papel',
       'Servicio Técnico',
       "Instalación y configuración",
       "Incluye tinta o toner y refacciones",
@@ -284,7 +307,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none lg:grid-cols-2">
           {plans.map((plan) => (
             <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
           ))}
