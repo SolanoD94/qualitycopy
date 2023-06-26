@@ -1,31 +1,33 @@
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import clsx from 'clsx'
-import { ExclamationTriangleIcon } from '@heroicons/react/20/solid'
-
+import {
+  ExclamationTriangleIcon,
+  CurrencyDollarIcon,
+} from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logomark } from '@/components/Logo'
+import { Excedentes } from '@/components/Modal'
 
 const plans = [
   {
     name: 'Mini Impresora Laser B&N',
     featured: false,
     price: { Monthly: '$567 MXN', Annually: '$0' },
-    description:
-      'Renta Mini Impresora para Oficina Máximo 4 Usuarios Wifi.',
+    description: 'Renta Mini Impresora para Oficina Máximo 4 Usuarios Wifi.',
     button: {
       label: 'Contratar',
       href: '/register',
     },
     features: [
-      'Incluye 1,000 impresiones/copias B&N',
-      "Tamaño Carta y Oficio",
+      'Incluye 1,000 impresiones/copias B&N.',
+      'Tamaño Carta y Oficio.',
       'Consumibles durante todo el contrato de renta. No incluye papel.',
-      'Servicio Técnico',
-      "Incluye tinta o toner y refacciones",
-      "Impresora Laser NUEVA: Imprime en B&N",
+      'Servicio Técnico.',
+      'Incluye tinta o toner y refacciones.',
+      'Impresora Laser NUEVA: Imprime en B&N.',
     ],
     logomarkClassName: 'fill-gray-300',
   },
@@ -40,13 +42,13 @@ const plans = [
       href: '/register',
     },
     features: [
-      'Incluye 1,000 impresiones/copias B&N y Color',
-      "Tamaño Carta y Oficio",
-      "Incluye 1,000 escaneos",
+      'Incluye 1,000 impresiones/copias B&N y Color.',
+      'Tamaño Carta y Oficio.',
+      'Incluye 1,000 escaneos.',
       'Consumibles durante todo el contrato de renta. No incluye papel.',
-      'Servicio Técnico',
-      "Incluye tinta o toner y refacciones",
-      "Multifuncional NUEVA: Imprime, Copia, y Escanea",
+      'Servicio Técnico.',
+      'Incluye tinta o toner y refacciones.',
+      'Multifuncional NUEVA: Copia, Imprime y Escanea',
     ],
     logomarkClassName: 'fill-gray-300',
   },
@@ -54,21 +56,20 @@ const plans = [
     name: 'Básico',
     featured: true,
     price: { Monthly: '$1900 MXN', Annually: '$70' },
-    description:
-      'Equipo NUEVO multifuncional a COLOR y Blanco & Negro',
+    description: 'Equipo NUEVO multifuncional a COLOR y Blanco & Negro',
     button: {
       label: 'Contratar',
       href: '/register',
     },
     features: [
       'Incluye 5,000 impresiones/copias B&N.',
-      "Tamaño Carta.",
+      'Tamaño Carta.',
       '500 impresiones/copias a COLOR y 5,000 escaneos.',
       'Consumibles durante todo el contrato de renta. No incluye papel.',
       'Servicio Técnico.',
-      "Instalación y configuración.",
-      "Incluye tinta o toner y refacciones.",
-      "Multifuncional NUEVO: Copia, Imprime y Escanea.",
+      'Instalación y configuración.',
+      'Incluye tinta o toner y refacciones.',
+      'Multifuncional NUEVO: Copia, Imprime y Escanea.',
     ],
     adicionales: [
       'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
@@ -80,21 +81,20 @@ const plans = [
     name: 'Renta + Color',
     featured: false,
     price: { Monthly: '$2200 MXN', Annually: '$1,990' },
-    description:
-      'Equipo NUEVO multifuncional a COLOR y Blanco & Negro',
+    description: 'Equipo NUEVO multifuncional a COLOR y Blanco & Negro',
     button: {
       label: 'Contratar',
       href: '/register',
     },
     features: [
-      'Incluye 5,000 impresiones/copias B&N',
-      "Tamaño Carta",
-      '1,000 impresiones/copias a COLOR y 5,000 escaneos',
-      'Consumibles durante todo el contrato de renta. No incluye papel',
-      'Servicio Técnico',
-      "Instalación y configuración",
-      "Incluye tinta o toner y refacciones",
-      "Multifuncional NUEVO copia, imprime y escanea",
+      'Incluye 5,000 impresiones/copias B&N.',
+      'Tamaño Carta.',
+      '1,000 impresiones/copias a COLOR y 5,000 escaneos.',
+      'Consumibles durante todo el contrato de renta. No incluye papel.',
+      'Servicio Técnico.',
+      'Instalación y configuración.',
+      'Incluye tinta o toner y refacciones.',
+      'Multifuncional NUEVO: Copia, Imprime y Escanea.',
     ],
     adicionales: [
       'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
@@ -135,6 +135,16 @@ function Plan({
   activePeriod,
   logomarkClassName,
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleIconClick = () => {
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <section
       className={clsx(
@@ -183,7 +193,20 @@ function Plan({
             </span>
           </>
         )}
-        <span className='text-sm pl-2'> / mes</span>
+        <span className="pl-2 text-sm"> / mes</span>
+        {/* Dollar Info Button */}
+        <button
+          onClick={handleIconClick}
+          className={clsx(
+            'ml-3 h-4 w-4 flex-none',
+            featured ? 'text-white' : 'text-cyan-500'
+          )}
+        >
+          <span className="relative flex h-4 w-4">
+            <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-sky-400 opacity-75"></span>
+            <CurrencyDollarIcon className="relative inline-flex" />
+          </span>
+        </button>
       </p>
       <p
         className={clsx(
@@ -237,7 +260,6 @@ function SolicitarCotización(props) {
         stroke="white"
       />
     </svg>
-    
   )
 }
 
@@ -256,12 +278,12 @@ export function Pricing() {
             id="pricing-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
           >
-          Simplifica tu trabajo y ahorra con nuestros planes de renta mensuales.
+            Simplifica tu trabajo y ahorra con nuestros planes de renta
+            mensuales.
           </h2>
         </div>
 
         <div className="mt-8 flex justify-center">
-          
           <div className="relative">
             <RadioGroup
               value={activePeriod}
@@ -312,38 +334,43 @@ export function Pricing() {
             <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
           ))}
         </div>
-       {/* Requisitos */}
-        <div className="mx-auto mt-16 max-w-2xl lg:max-w-none rounded-md bg-yellow-50 p-4">
+        {/* Requisitos */}
+        <div className="mx-auto mt-16 max-w-2xl rounded-md bg-yellow-50 p-4 lg:max-w-none">
           <div className="flex">
             <div className="flex-shrink-0">
-              <ExclamationTriangleIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
+              <ExclamationTriangleIcon
+                className="h-5 w-5 text-yellow-400"
+                aria-hidden="true"
+              />
             </div>
             <div className="ml-3">
-              <h3 className="text-sm font-medium text-yellow-800">Requisitos para contratar un plan de renta.</h3>
+              <h3 className="text-sm font-medium text-yellow-800">
+                Requisitos para contratar un plan de renta.
+              </h3>
               <div className="mt-2 text-sm text-yellow-700">
-                <ul role="list" className="list-disc space-y-1 pl-5">              
-                <li>Documentos legales y fiscales.</li>
-                <li>Pago de un mes de renta como depósito.</li>
-                <li>Firma de contrato por 12 meses forzoso.</li>
+                <ul role="list" className="list-disc space-y-1 pl-5">
+                  <li>Documentos legales y fiscales.</li>
+                  <li>Pago de un mes de renta como depósito.</li>
+                  <li>Firma de contrato por 12 meses forzoso.</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-          {/* Boton */}
-          <div className="mt-8 flex justify-center">
-        <Button
-                href="https://api.whatsapp.com/send?phone=5212223929010"
-                target="_blank"
-                variant="solid"
-                rel="noreferrer"
-                color="cyan"
-                className="mx-auto mt-16 max-w-2xl"
-              >
-                <SolicitarCotización className="h-6 w-6 flex-none" />
-                <span className="mx-3 text-md">Solicitar cotización formal</span>
-            </Button>
-            </div>
+        {/* Boton */}
+        <div className="mt-8 flex justify-center">
+          <Button
+            href="https://api.whatsapp.com/send?phone=5212223929010"
+            target="_blank"
+            variant="solid"
+            rel="noreferrer"
+            color="cyan"
+            className="mx-auto mt-16 max-w-2xl"
+          >
+            <SolicitarCotización className="h-6 w-6 flex-none" />
+            <span className="text-md mx-3">Solicitar cotización formal</span>
+          </Button>
+        </div>
       </Container>
     </section>
   )

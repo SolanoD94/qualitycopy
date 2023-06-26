@@ -16,8 +16,7 @@ const features = [
     price: '$4,838',
     description:
       'La Impresora multifuncional 3 en 1 Epson EcoTank L3210  ofrece a las familias, estudiantes y profesionales un costo de impresión ultra bajo, que te permite imprimir hasta  4.500 páginas en negro o  7.500 páginas a color con cada juego de botellas de repuesto.',
-    video:
-      'https://mediaserver.goepson.com/ImConvServlet/imconv/5eb479d75a3c57ad2e6cd8f4363fe7326a4aa778/1200Wx1200H?use=banner&hybrisId=B2C&assetDescr=EcoTank-L3210-690x460-1',
+    video:""  
   },
   {
     name: 'Plotter Epson T3170',

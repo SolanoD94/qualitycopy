@@ -22,6 +22,7 @@ module.exports = {
     extend: {
       animation: {
         'fade-in': 'fade-in 0.5s linear forwards',
+        'ping-slow': 'ping 2s infinite',
         marquee: 'marquee var(--marquee-duration) linear infinite',
         'spin-slow': 'spin 4s linear infinite',
         'spin-slower': 'spin 6s linear infinite',
