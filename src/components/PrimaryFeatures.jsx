@@ -236,78 +236,47 @@ function FeaturesMobile() {
             ref={(ref) => (slideRefs.current[featureIndex] = ref)}
             className="w-full flex-none snap-center px-4 sm:px-6"
           >
-            <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <CircleBackground
-                  color="#13B5C8"
-                  className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
-                />
+            <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 p-6 ">
+              <h3 className="relative mt-3 text-lg font-semibold text-white">
+                {feature.name}
+                <span className="relative ml-0 mt-2 inline-flex flex-shrink-0 items-end rounded-lg bg-cyan-500 px-2 py-0.5 font-bold text-white">
+                  {feature.price}
+                </span>
+              </h3>
+              <div className="px-0 py-3">
+                <dt className="text-sm font-medium leading-5 text-white">
+                  {feature.type}
+                </dt>
+                <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
+                  {feature.function}
+                </dd>
+                <dd className="text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">
+                  {feature.size}
+                </dd>
               </div>
-              <Image
-                className="mx-auto mt-8 max-w-[2000px]"
-                priority
-                src={feature.image}
-              ></Image>
-              <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
-                <h3 className="text-md mt-6 font-semibold text-white sm:text-lg">
-                  {feature.name}
-                  <span className="ml-5 inline-flex flex-shrink-0 items-end rounded-lg bg-cyan-500 px-4 py-0.5 font-bold text-white">
-                    {feature.price}
-                  </span>
-                </h3>
-                <p className="mt-2 text-sm text-gray-400">{feature.type}</p>
-                <div className="mt-3 border-t border-white/10">
-                  <dl className="divide-y divide-white/10">
-                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt className="text-sm font-medium leading-5 text-white">
-                        {feature.type}
-                      </dt>
-                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
-                        {feature.function}
-                      </dd>
-                    </div>
-                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt className="text-sm font-medium leading-5 text-white">
-                        Tamaño de papel
-                      </dt>
-                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
-                        {feature.size}
-                      </dd>
-                    </div>
-                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt className="text-sm font-medium leading-5 text-white">
-                        Velocidad
-                      </dt>
-                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
-                        {feature.speed}
-                      </dd>
-                    </div>
-                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt className="text-sm font-medium leading-5 text-white">
-                        Primera hoja impresa
-                      </dt>
-                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
-                        {feature.firstPage}
-                      </dd>
-                    </div>
-                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt className="text-sm font-medium leading-5 text-white">
-                        Resolución
-                      </dt>
-                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
-                        {feature.resolution}
-                      </dd>
-                    </div>
-                    <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt className="text-sm font-medium leading-5 text-white">
-                        Consumible
-                      </dt>
-                      <dd className="mt-1 text-sm leading-5 text-gray-400 sm:col-span-2 sm:mt-0">
-                        {feature.consumible}
-                      </dd>
-                    </div>
-                  </dl>
+              <div className="mt-8 flex items-center justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <CircleBackground
+                      color="#13B5C8"
+                      className={
+                        featureIndex % 2 === 1 ? 'rotate-180' : undefined
+                      }
+                    />
+                  </div>
+                  <div className="relative">
+                    <Image
+                      className="overflow mx-auto max-w-full p-2"
+                      priority
+                      src={feature.image}
+                    />
+                  </div>
                 </div>
+              </div>
+              <div className="relative inset-x-0 bottom-0 bg-gray-700/25 p-6 backdrop-blur">
+                <a href="#" className="flex justify-center text-white">
+                  Ver producto
+                </a>
               </div>
             </div>
           </div>

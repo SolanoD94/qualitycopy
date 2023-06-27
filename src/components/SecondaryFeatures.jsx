@@ -88,7 +88,7 @@ export function SecondaryFeatures() {
                 allow="fullscreen; accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 autoplay
-                muted="true"
+                muted={true}
               ></iframe>
               <div className="relative z-10 flex items-center pt-8">
                 <h3 className="mr-1 font-semibold text-gray-900">

@@ -214,10 +214,10 @@ function Plan({
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute left-1/2 z-10 mr-3 mt-3 w-48 max-w-sm -translate-y-24 translate-x-4 transform px-2 md:w-56 lg:w-56 lg:max-w-3xl">
+                  <Popover.Panel className="absolute left-1/2 z-10 mr-3 mt-3 w-48 max-w-sm lg:-translate-y-24 lg:translate-x-4 -translate-y-20 -translate-x-32 transform px-2 md:w-56 lg:w-56 lg:max-w-3xl">
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                       <div className="relative bg-cyan-600 px-3 py-1">
-                        <p className="text-xs font-semibold text-gray-200">
+                        <p className="text-xs flex justify-center font-semibold text-gray-200">
                           Costos por excedentes:
                         </p>
                         <ul role="list" className="text-xs">
