@@ -85,13 +85,13 @@ export function SecondaryFeatures() {
                 src={feature.video}
                 title={feature.name}
                 frameborder="0"
-                allow="fullscreen; accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="fullscreen; accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 autoplay
-                muted
+                muted="true"
               ></iframe>
               <div className="relative z-10 flex items-center pt-8">
-                <h3 className="mt-0 font-semibold text-gray-900">
+                <h3 className="mr-1 font-semibold text-gray-900">
                   {feature.name}
                 </h3>
                 <span className="text-md ml-auto inline-flex flex-shrink-0 rounded-lg bg-cyan-500 px-4 py-0.5 font-bold text-white">

@@ -28,10 +28,7 @@ const plans = [
       'Incluye tinta o toner y refacciones.',
       'Impresora Laser NUEVA: Imprime en B&N.',
     ],
-    adicionales: [
-      'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
-      'Doble Carta se cobra doble impresión',
-    ],
+    adicionales: ['B&N y Escaneos: $0.30 + IVA'],
     logomarkClassName: 'fill-gray-300',
   },
   {
@@ -53,10 +50,7 @@ const plans = [
       'Incluye tinta o toner y refacciones.',
       'Multifuncional NUEVA: Copia, Imprime y Escanea',
     ],
-    adicionales: [
-      'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
-      'Doble Carta se cobra doble impresión',
-    ],
+    adicionales: ['B&N y Escaneos: $0.30 + IVA'],
     logomarkClassName: 'fill-gray-300',
   },
   {
@@ -79,8 +73,9 @@ const plans = [
       'Multifuncional NUEVO: Copia, Imprime y Escanea.',
     ],
     adicionales: [
-      'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
-      'Doble Carta se cobra doble impresión',
+      'B&N y Escaneos: $0.20 + IVA',
+      'Color: $3.00 + IVA',
+      'Doble Carta se cobra como doble impresión',
     ],
     logomarkClassName: 'fill-cyan-500',
   },
@@ -104,8 +99,9 @@ const plans = [
       'Multifuncional NUEVO: Copia, Imprime y Escanea.',
     ],
     adicionales: [
-      'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
-      'Doble Carta se cobra doble impresión',
+      'B&N y Escaneos: $0.20 + IVA',
+      'Color: $3.00 + IVA',
+      'Doble Carta se cobra como doble impresión',
     ],
     logomarkClassName: 'fill-gray-500',
   },
@@ -138,6 +134,7 @@ function Plan({
   description,
   button,
   features,
+  adicionales,
   featured = false,
   activePeriod,
   logomarkClassName,
@@ -194,7 +191,7 @@ function Plan({
 
         {/* Dollar Info Button & Popover*/}
         <div>
-          <Popover className="relative">
+          <Popover className="relative -translate-y-4">
             {({ open }) => (
               <>
                 <Popover.Button
@@ -217,20 +214,19 @@ function Plan({
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-auto max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
+                  <Popover.Panel className="absolute left-1/2 z-10 mr-3 mt-3 w-48 max-w-sm -translate-y-24 translate-x-4 transform px-2 md:w-56 lg:w-56 lg:max-w-3xl">
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                      <div className="relative grid gap-8 bg-cyan-400 p-7 lg:grid-cols-2">
-                        
-                            <div className="ml-2">
-                              <p className="text-sm font-medium text-gray-900">
-                                Costos por excedentes
-                              </p>
-                              <p className="text-sm text-gray-500">
-                                {features.adicionales}
-                              </p>
-                            </div>
-                         
-                      
+                      <div className="relative bg-cyan-600 px-3 py-1">
+                        <p className="text-xs font-semibold text-gray-200">
+                          Costos por excedentes:
+                        </p>
+                        <ul role="list" className="text-xs">
+                          {adicionales.map((item) => (
+                            <li key={item} className="flex py-1">
+                              <span className="ml-2 text-gray-200">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </Popover.Panel>

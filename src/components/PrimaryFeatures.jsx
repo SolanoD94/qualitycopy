@@ -88,7 +88,7 @@ function FeaturesDesktop() {
               />
             )}
             <div className="relative z-10 flex items-center px-8 pt-8">
-              <h3 className="ml-4 text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-white">
                 <Tab className="text-left [&:not(:focus-visible)]:focus:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
