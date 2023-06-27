@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { RadioGroup } from '@headlessui/react'
+import { useState, Fragment } from 'react'
+import { RadioGroup, Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import {
   ExclamationTriangleIcon,
@@ -9,7 +9,6 @@ import {
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logomark } from '@/components/Logo'
-import { Excedentes } from '@/components/Modal'
 
 const plans = [
   {
@@ -28,6 +27,10 @@ const plans = [
       'Servicio Técnico.',
       'Incluye tinta o toner y refacciones.',
       'Impresora Laser NUEVA: Imprime en B&N.',
+    ],
+    adicionales: [
+      'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
+      'Doble Carta se cobra doble impresión',
     ],
     logomarkClassName: 'fill-gray-300',
   },
@@ -49,6 +52,10 @@ const plans = [
       'Servicio Técnico.',
       'Incluye tinta o toner y refacciones.',
       'Multifuncional NUEVA: Copia, Imprime y Escanea',
+    ],
+    adicionales: [
+      'Excendentes B&N y Escaneos $0.20 +IVA; Color $3.00 más IVA',
+      'Doble Carta se cobra doble impresión',
     ],
     logomarkClassName: 'fill-gray-300',
   },
@@ -135,16 +142,6 @@ function Plan({
   activePeriod,
   logomarkClassName,
 }) {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const handleIconClick = () => {
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
-
   return (
     <section
       className={clsx(
@@ -194,20 +191,57 @@ function Plan({
           </>
         )}
         <span className="pl-2 text-sm"> / mes</span>
-        {/* Dollar Info Button */}
-        <button
-          onClick={handleIconClick}
-          className={clsx(
-            'ml-3 h-4 w-4 flex-none',
-            featured ? 'text-white' : 'text-cyan-500'
-          )}
-        >
-          <span className="relative flex h-4 w-4">
-            <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-sky-400 opacity-75"></span>
-            <CurrencyDollarIcon className="relative inline-flex" />
-          </span>
-        </button>
+
+        {/* Dollar Info Button & Popover*/}
+        <div>
+          <Popover className="relative">
+            {({ open }) => (
+              <>
+                <Popover.Button
+                  className={clsx(
+                    'ml-3 h-4 w-4 flex-none',
+                    featured ? 'text-white' : 'text-cyan-500'
+                  )}
+                >
+                  <span className="relative flex h-4 w-4">
+                    <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-sky-400 opacity-75"></span>
+                    <CurrencyDollarIcon className="relative inline-flex" />
+                  </span>
+                </Popover.Button>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-auto max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
+                    <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                      <div className="relative grid gap-8 bg-cyan-400 p-7 lg:grid-cols-2">
+                        
+                            <div className="ml-2">
+                              <p className="text-sm font-medium text-gray-900">
+                                Costos por excedentes
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                {features.adicionales}
+                              </p>
+                            </div>
+                         
+                      
+                      </div>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
+              </>
+            )}
+          </Popover>
+        </div>
       </p>
+      {/* End of Dollar Info Button & Popover*/}
+
       <p
         className={clsx(
           'mt-3 text-sm',

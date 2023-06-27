@@ -130,7 +130,6 @@ export function Hero() {
               <Image className="mx-auto max-w-[2000px] mt-8" priority
               src={printerWF}
               >
-                
               </Image>
             </div>
           </div>

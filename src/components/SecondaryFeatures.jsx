@@ -5,7 +5,7 @@ import { Container } from '@/components/Container'
 const features = [
   {
     name: 'Workforce Pro WF-C579R',
-    price: '$16,659',
+    price: '$16,659 MXN',
     description:
       'Equipo compacto para mejorar la productividad - Diseño compacto gracias al Sistema de Bolsas de Tinta Reemplazables (RIPS) para una estación de trabajo eficiente y optimizada.',
     video:
@@ -13,14 +13,14 @@ const features = [
   },
   {
     name: 'Multifuncional EPSON L3210',
-    price: '$4,838',
+    price: '$4,838 MXN',
     description:
       'La Impresora multifuncional 3 en 1 Epson EcoTank L3210  ofrece a las familias, estudiantes y profesionales un costo de impresión ultra bajo, que te permite imprimir hasta  4.500 páginas en negro o  7.500 páginas a color con cada juego de botellas de repuesto.',
-    video:""  
+    video: '',
   },
   {
     name: 'Plotter Epson T3170',
-    price: '$16,096',
+    price: '$16,096 MXN',
     description:
       'Acepta Rollo de papel de 60cm (24 Pulg). Plotter a COLOR de hasta 60cm de Ancho. Ideal para Planos Lineales, Texto y Foto. Corta el plano automáticamente. Acepta papel en rollo y hojas hasta 11x17 pulgadas. Charola para personalizar sobres y folders.',
     video:
@@ -28,7 +28,7 @@ const features = [
   },
   {
     name: 'Multifuncional EcoTank L15150',
-    price: '$25,793',
+    price: '$25,793 MXN',
     description:
       'Multifuncional Doble Cara. Capacidad de hasta 500 hojas en las dos bandejas frontales y botellas de reemplazo de tinta que permiten imprimir hasta 7.500 páginas en negro y hasta 6.000 páginas a color. Cuenta con la tecnología sin calor PrecisionCore Heat-Free Technology™.',
     video:
@@ -36,7 +36,7 @@ const features = [
   },
   {
     name: 'Plotter Epson 3170X',
-    price: '$55,994',
+    price: '$55,994 MXN',
     description:
       'Plotter de escritorio de 24 pulgadas, de alta velocidad y con sistema de tanque de tinta. Resolución Máxima de Impresión: 2400ppp x 1200ppp. Tipo de Tinta: Botellas de tinta Epson T49H recargables. 4 colores (C, M, Y, K)',
     video:
@@ -44,7 +44,7 @@ const features = [
   },
   {
     name: 'Tintas Originales Ecotank',
-    price: 'desde $194',
+    price: 'desde $194 MXN',
     description:
       'Las tintas originales Epson brindan resultados consistentes de alta calidad, lo que ayuda a evitar la decoloración y crea documentos nítidos y fotos impresionantes. Recarga de tinta es simple y sin complicaciones.',
     video: 'https://www.youtube.com/embed/zbybcFd3Tcc',
