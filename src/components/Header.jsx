@@ -53,7 +53,7 @@ export function Header() {
           <div className="relative z-10 flex items-center gap-16">
             <Link href="/" aria-label="Home" className="flex items-center">
               <Logomark className="h-10 w-auto" />
-              <span className="ml-2 font-semibold text-2xl">Quality Copy</span>
+              <span className="ml-2 text-2xl font-semibold">Quality Copy</span>
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
@@ -108,13 +108,12 @@ export function Header() {
                             <MobileNavLink href="#empresas">
                               Empresas
                             </MobileNavLink>
-                            <MobileNavLink href="#faqs">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button href="/" variant="outline">
-                              Log in
+                              Contacto
                             </Button>
-                            <Button href="#">Download the app</Button>
+                            <Button href="#">Tienda Epson</Button>
                           </div>
                         </Popover.Panel>
                       </>
@@ -124,7 +123,7 @@ export function Header() {
               )}
             </Popover>
             <Button href="/" variant="outline" className="hidden lg:block">
-              Log in
+              Contacto
             </Button>
             <Button href="#" className="hidden lg:block">
               Tienda Epson

@@ -110,7 +110,7 @@ export function Hero() {
             Quality Copy te brinda la mejor experiencia al ofrecerte equipos multifuncionales de alta calidad, soporte técnico especializado y planes de renta flexibles a tus necesidades. Con nosotros, podrás maximizar tu productividad y eficiencia sin preocuparte por los costos y el mantenimiento asociados a la propiedad de los equipos. 
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-            <Button href="#planesRenta" className="hidden lg:block">
+            <Button href="#planesRenta" className="lg:block">
               Ver Planes de Renta
             </Button>
               <Button
