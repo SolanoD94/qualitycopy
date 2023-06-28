@@ -177,6 +177,7 @@ function FeaturesDesktop() {
                     className="col-start-1 row-start-1 flex focus:outline-offset-[32px] [&:not(:focus-visible)]:focus:outline-none"
                   >
                     <Image
+                      alt={feature.name}
                       src={feature.image}
                       animated="true"
                       custom={{ isForwards, changeCount }}
@@ -266,6 +267,7 @@ function FeaturesMobile() {
                   </div>
                   <div className="relative">
                     <Image
+                      alt={feature.name}
                       className="overflow mx-auto max-w-full p-2"
                       priority
                       src={feature.image}
