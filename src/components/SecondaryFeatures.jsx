@@ -84,10 +84,10 @@ export function SecondaryFeatures() {
                 height="auto"
                 src={feature.video}
                 title={feature.name}
-                frameborder="0"
+                frameBorder="0"
                 allow="fullscreen; accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                autoplay
+                allowFullScreen
+                autoPlay
                 muted={true}
               ></iframe>
               <div className="relative z-10 flex items-center pt-8">

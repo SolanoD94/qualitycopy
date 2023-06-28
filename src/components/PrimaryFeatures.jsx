@@ -178,7 +178,7 @@ function FeaturesDesktop() {
                   >
                     <Image
                       src={feature.image}
-                      animated
+                      animated="true"
                       custom={{ isForwards, changeCount }}
                     />
                   </Tab.Panel>
@@ -330,8 +330,8 @@ export function PrimaryFeatures() {
               src="https://video.wixstatic.com/video/52a653_414bd22a7b284501868be7f37bddd442/720p/mp4/file.mp4"
               className="rounded object-cover"
               allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted"
-              allowfullscreen
-              autoplay
+              allowFullScreen
+              autoPlay
               muted
             ></iframe>
           </div>
